@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import images_on from "./images/images_on.jpg";
-import images_off from "./images/images_off.jpg";
+import on from "./images/on.jpg";
+import off from "./images/off.jpg";
 
 class App extends React.Component{
   constructor(props){
@@ -51,13 +51,11 @@ class App extends React.Component{
       {this.state.arr.map((ele,index)=>{
         return (
           <div className='bulb'>
-            <img src={ele.button?images_off:images_on}></img>
+            <img className='img' src={ele.button?off:on}></img>
             <button className='btn btn-primary' onClick={() => this.changeState(index)}>{ele.button?"OFF":"ON"}</button>
           </div>
         )
-      })}
-      
-        
+      })}    
       </div>
     )
   }
